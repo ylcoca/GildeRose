@@ -6,18 +6,18 @@ namespace DAL.Entity
 {
     public class BackstagePasses : ItemObjects
     {
-        int highestQualityValue = int.Parse(ConfigurationManager.AppSettings["highestQualityValue"]);
+        
 
         public BackstagePasses(Item item)
         {
             this.Name = item.Name;
             this.SellIn = item.SellIn;
             this.Quality = item.Quality;
-        }
+        } 
 
         public override void UpdateQuality()
         {
-            if (this.Quality < highestQualityValue)
+            if (this.Quality < this.highestQualityValue)
             {
                 this.Quality ++;
                 if (SellIn < 11 && SellIn >= 6)

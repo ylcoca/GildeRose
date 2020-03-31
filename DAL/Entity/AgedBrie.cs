@@ -5,7 +5,6 @@ namespace DAL.Entity
 {
     public class AgedBrie : ItemObjects
     {
-        int highestQualityValue = int.Parse(ConfigurationManager.AppSettings["highestQualityValue"]);
         public AgedBrie(Item item)
         {
             this.Name = item.Name;
@@ -13,19 +12,19 @@ namespace DAL.Entity
             this.Quality = item.Quality;
         }
         public override void UpdateQuality()
-        {   
-            if (Quality < highestQualityValue)
+        {
+            if (Quality < this.highestQualityValue)
             {
                 Quality++;
             }
 
-            UpdateSellIn();               
+            UpdateSellIn();
         }
 
         public override void UpdateSellIn()
         {
             SellIn--;
-            if (SellIn < 0 && Quality < highestQualityValue)
+            if (SellIn < 0 && Quality < this.highestQualityValue)
             {
                 Quality++;
             }
