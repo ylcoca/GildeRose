@@ -12,135 +12,135 @@ namespace Test
         [Test]
         public void NameAgedBrie()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 } };
-            var result = new GildedRoseBusinessLogic(Items).Items;
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 } };
+            var result = new GildedRoseBusinessLogic(item).items;
             Assert.AreEqual("Aged Brie", result[0].Name);
         }
 
         [Test]
         public void HasSellInAgedBrie()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 0 } };
-            var result = new GildedRoseBusinessLogic(Items).Items;
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 0 } };
+            var result = new GildedRoseBusinessLogic(item).items;
             Assert.AreEqual(10, result[0].SellIn);
         }
 
         [Test]
         public void HasQualityAgedBrie()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 10 } };
-            var result = new GildedRoseBusinessLogic(Items).Items;
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 10 } };
+            var result = new GildedRoseBusinessLogic(item).items;
             Assert.AreEqual(10, result[0].Quality);
         }
 
         [Test]
         public void BrieImprovesWithAge()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(2, item.Quality);
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 } };
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(2, items.Quality);
         }
 
         [Test]
         public void AfterSellByDateIncreaseInOneAgedBrie()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(1, item.Quality);
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 } };
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(1, items.Quality);
         }
 
         [Test]
         public void AfterSellByDateDecreaseInOneAgedBrie()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(1, item.Quality);
+            IList<Item> item = new List<Item> { new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 } };
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(1, items.Quality);
         }
 
         [Test]
         public void AfterSellByDateStillTheSameSulfuras()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(80, item.Quality);
+            IList<Item> item = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 } };
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(80, items.Quality);
         }
 
         [Test]
         public void AfterSellByDateDecresesInDoubleConjure()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(4, item.Quality);
+            IList<Item> item = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(4, items.Quality);
         }
 
         [Test]
         public void BackStageIncreasesValueByDate()
         {
-            IList<Item> Items = new List<Item> { new Item {
+            IList<Item> item = new List<Item> { new Item {
                            Name = "Backstage passes to a TAFKAL80ETC concert",
                            SellIn = 15,
                            Quality = 20
                        } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(21, item.Quality);
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(21, items.Quality);
         }
 
         [Test]
         public void BackStageLossesAllValueInConcertDay()
         {
-            IList<Item> Items = new List<Item> { new Item {
+            IList<Item> item = new List<Item> { new Item {
                            Name = "Backstage passes to a TAFKAL80ETC concert",
                            SellIn = 0,
                            Quality = 50
                        } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(0, item.Quality);
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(0, items.Quality);
         }
 
         [Test]
         public void QualityOfItemLimit50()
         {
-            IList<Item> Items = new List<Item> { new Item {
+            IList<Item> item = new List<Item> { new Item {
                            Name = "Backstage passes to a TAFKAL80ETC concert",
                            SellIn = 1,
                            Quality = 50
                        } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(50, item.Quality);
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(50, items.Quality);
         }
 
         [Test]
         public void BackstageValue10DaysBefore()
         {
-            IList<Item> Items = new List<Item> { new Item {
+            IList<Item> item = new List<Item> { new Item {
                            Name = "Backstage passes to a TAFKAL80ETC concert",
                            SellIn = 8,
                            Quality = 47
                        } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(49, item.Quality);
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(49, items.Quality);
         }
 
         [Test]
         public void BackstageValueTwoDaysBefore()
         {
-            IList<Item> Items = new List<Item> { new Item {
+            IList<Item> item = new List<Item> { new Item {
                            Name = "Backstage passes to a TAFKAL80ETC concert",
                            SellIn = 2,
                            Quality = 40
                        } };
-            var item = new GildedRoseBusinessLogic(Items).Items[0];
-            item.UpdateQuality();
-            Assert.AreEqual(43, item.Quality);
+            var items = new GildedRoseBusinessLogic(item).items[0];
+            items.UpdateQuality();
+            Assert.AreEqual(43, items.Quality);
         }
     }
 }

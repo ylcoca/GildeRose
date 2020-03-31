@@ -39,7 +39,7 @@ namespace csharp
                    };
             
 
-            new GildedRoseBusinessLogic(Items).printResult();
+            new GildedRoseBusinessLogic(Items).PrintResult();
 
             Console.ReadKey();
 

@@ -7,23 +7,23 @@ namespace BuisnessLogic
 {
     public class GildedRoseBusinessLogic
     {
-        public IList<ItemObjects> Items;
-        public const int Days = 31;
+        public IList<ItemObjects> items;
+        public const int days = 31;
 
-        public GildedRoseBusinessLogic(IList<Item> Items)
+        public GildedRoseBusinessLogic(IList<Item> items)
         {
 
-            this.Items = ItemFactory.BuildClass(Items);
+            this.items = ItemFactory.BuildClass(items);
         }
 
-        public void printResult()
+        public void PrintResult()
         {
-            for (var day = 0; day < Days; day++)
+            for (var day = 0; day < days; day++)
             {
                 Console.WriteLine("-------- day " + day + " --------");
                 Console.WriteLine("name, sellIn, quality");
 
-                foreach (var item in this.Items)
+                foreach (var item in this.items)
                 {
                     Console.WriteLine(item);
                    item.UpdateQuality();
