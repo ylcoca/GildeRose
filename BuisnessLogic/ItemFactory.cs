@@ -18,7 +18,7 @@ namespace BuisnessLogic
                 switch (item.Name)
                 {
                     case "+5 Dexterity Vest":
-                        inheritedItem = new DexterityVest(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new DexterityVest(item);
                         break;
                     case "Aged Brie":
                         inheritedItem = new AgedBrie(item.Name, item.SellIn, item.Quality);

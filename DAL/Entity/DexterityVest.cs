@@ -9,11 +9,11 @@ namespace DAL.Entity
 {
     public class DexterityVest : ItemObjects
     {
-        public DexterityVest(string Name, int SellIn, int Quality)
+        public DexterityVest(Item item)
         {
-            this.Name = Name;
-            this.SellIn = SellIn;
-            this.Quality = Quality;
+            this.Name = item.Name;
+            this.SellIn = item.SellIn;
+            this.Quality = item.Quality;
         }
 
         public override void UpdateQuality()
