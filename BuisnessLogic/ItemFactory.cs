@@ -21,19 +21,19 @@ namespace BuisnessLogic
                         inheritedItem = new DexterityVest(item);
                         break;
                     case "Aged Brie":
-                        inheritedItem = new AgedBrie(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new AgedBrie(item);
                         break;
                     case "Elixir of the Mongoose":
-                        inheritedItem = new ElixirOfTheMongoose(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new ElixirOfTheMongoose(item);
                         break;
                     case "Sulfuras, Hand of Ragnaros":
-                        inheritedItem = new Sulfuras(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new Sulfuras(item);
                         break;
                     case "Backstage passes to a TAFKAL80ETC concert":
-                        inheritedItem = new BackstagePasses(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new BackstagePasses(item);
                         break;
                     case "Conjured Mana Cake":
-                        inheritedItem = new Conjured(item.Name, item.SellIn, item.Quality);
+                        inheritedItem = new Conjured(item);
                         break;
                 }
 

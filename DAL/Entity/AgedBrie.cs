@@ -6,11 +6,11 @@ namespace DAL.Entity
     public class AgedBrie : ItemObjects
     {
         int highestQualityValue = int.Parse(ConfigurationManager.AppSettings["highestQualityValue"]);
-        public AgedBrie(string Name, int SellIn, int Quality)
+        public AgedBrie(Item item)
         {
-            this.Name = Name;
-            this.SellIn = SellIn;
-            this.Quality = Quality;
+            this.Name = item.Name;
+            this.SellIn = item.SellIn;
+            this.Quality = item.Quality;
         }
         public override void UpdateQuality()
         {   

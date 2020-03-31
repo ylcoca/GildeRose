@@ -10,11 +10,11 @@ namespace DAL.Entity
     public class Conjured : ItemObjects
     {
 
-        public Conjured(string Name, int SellIn, int Quality)
+        public Conjured(Item item)
         {
-            this.Name = Name;
-            this.SellIn = SellIn;
-            this.Quality = Quality;
+            this.Name = item.Name;
+            this.SellIn = item.SellIn;
+            this.Quality = item.Quality;
         }
         public override void UpdateQuality()
         {

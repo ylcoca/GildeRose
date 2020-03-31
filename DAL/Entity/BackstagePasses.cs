@@ -8,11 +8,11 @@ namespace DAL.Entity
     {
         int highestQualityValue = int.Parse(ConfigurationManager.AppSettings["highestQualityValue"]);
 
-        public BackstagePasses(string Name, int SellIn, int Quality)
+        public BackstagePasses(Item item)
         {
-            this.Name = Name;
-            this.SellIn = SellIn;
-            this.Quality = Quality;
+            this.Name = item.Name;
+            this.SellIn = item.SellIn;
+            this.Quality = item.Quality;
         }
 
         public override void UpdateQuality()
