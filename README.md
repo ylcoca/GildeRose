@@ -1,5 +1,5 @@
-# GildeRose
- GildeRose Implementation in C#
+# GildedRose
+ GildedRose Implementation in C#
  
 ## Project 
 the requirement of the project can be found in https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/master/GildedRoseRequirements.txt. 
