@@ -1,14 +1,9 @@
-﻿using Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DAL.Entity
 {
     public class Conjured : ItemObjects
     {
+        const int decreasedQualityByTwo = 2;
 
         public Conjured(Item item)
         {
@@ -18,23 +13,10 @@ namespace DAL.Entity
         }
         public override void UpdateQuality()
         {
-            if (this.Quality > 0)
+            if (Quality > 0)
             {
-                this.Quality -= 2;
-            }
-
-            UpdateSellIn();
-
-          
-        }
-        public override void UpdateSellIn()
-        {
-            this.SellIn--;
-            if (SellIn < 0 && Quality > 0)
-            {
-                this.Quality -= 2;
-                
-            }
+                Quality -= decreasedQualityByTwo;
+            }          
         }
     }
 

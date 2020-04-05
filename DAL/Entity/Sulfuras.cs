@@ -9,18 +9,12 @@ namespace DAL.Entity
 {
     public class Sulfuras : ItemObjects
     {
+        const int fixedQualitySulfuras = 80;
         public Sulfuras(Item item)
         {
             this.Name = item.Name;
             this.SellIn = item.SellIn;
-            this.Quality = item.Quality;
+            this.Quality = fixedQualitySulfuras;
         }
-
-        public override void UpdateQuality()
-        {
-            this.Quality = 80;
-        }
-
-        public override void UpdateSellIn() { }
     }
 }

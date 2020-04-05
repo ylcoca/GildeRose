@@ -11,23 +11,5 @@ namespace DAL.Entity
             this.SellIn = item.SellIn;
             this.Quality = item.Quality;
         }
-        public override void UpdateQuality()
-        {
-            if (Quality < this.highestQualityValue)
-            {
-                Quality++;
-            }
-
-            UpdateSellIn();
-        }
-
-        public override void UpdateSellIn()
-        {
-            SellIn--;
-            if (SellIn < 0 && Quality < this.highestQualityValue)
-            {
-                Quality++;
-            }
-        }
     }
 }

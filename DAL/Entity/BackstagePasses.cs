@@ -6,7 +6,10 @@ namespace DAL.Entity
 {
     public class BackstagePasses : ItemObjects
     {
-        
+        const int doubleTheDefaultValue = 2;
+        const int tenDays = 10;
+        const int sixDays = 6;
+        const int zeroDays = 0;
 
         public BackstagePasses(Item item)
         {
@@ -20,27 +23,21 @@ namespace DAL.Entity
             if (this.Quality < this.highestQualityValue)
             {
                 this.Quality ++;
-                if (SellIn < 11 && SellIn >= 6)
+
+                if (SellIn <= tenDays && SellIn >= sixDays)
                 {
                     Quality++;
                 }
-                else if (SellIn < 6)
+                else if (SellIn < sixDays)
                 {
-                    this.Quality += 2;
-                }                
+                    this.Quality += doubleTheDefaultValue;
+                }
+                else if (SellIn < zeroDays)
+                {
+                    Quality -= Quality;
+                }
             }
-
-            UpdateSellIn();
                 
-        }
-
-        public override void UpdateSellIn()
-        {
-            this.SellIn--;
-            if (SellIn < 0)
-            {
-                Quality -= Quality;
-            }
         }
     }
 }

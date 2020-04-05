@@ -12,8 +12,30 @@ namespace DAL.Entity
     {
         public int highestQualityValue = int.Parse(ConfigurationManager.AppSettings["highestQualityValue"]);
 
-        public abstract void UpdateQuality();
+        public void Update()
+        {
+            UpdateQuality();
+            DecreaseSellIn();
 
-        public abstract void  UpdateSellIn();
+            if (SellIn < 0)
+            {
+                UpdateQuality();
+            }
+        }
+
+        public virtual void UpdateQuality()
+        {
+            if (Quality < highestQualityValue)
+            {
+                Quality++;
+            }
+        }
+
+        public virtual void DecreaseSellIn()
+        {
+            SellIn--;
+        }
+
+       
     }
 }

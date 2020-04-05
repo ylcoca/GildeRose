@@ -18,22 +18,11 @@ namespace DAL.Entity
 
         public override void UpdateQuality()
         {
-            if (this.Quality > 0)
+            if (Quality > 0)
             {
                 this.Quality--;
             }
-            UpdateSellIn();
             
-        }
-
-        public override void UpdateSellIn()
-        {
-            this.SellIn--;
-            if (SellIn < 0 && Quality > 0)
-            {
-                Quality--;
-            }
-        
         }
     }
 }
