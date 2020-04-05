@@ -9,6 +9,14 @@ namespace Test
     [TestFixture]
     public class GildedRoseTest
     {
+
+        [SetUp]
+        public void TestInit()
+        {
+            // Runs before each test. (Optional)
+            
+        }
+
         [Test]
         public void NameAgedBrie()
         {
