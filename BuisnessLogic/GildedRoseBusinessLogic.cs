@@ -26,13 +26,13 @@ namespace BuisnessLogic
                 foreach (var item in this.items)
                 {
                     Console.WriteLine(item);
-                   item.UpdateQuality();
+                    item.UpdateQuality();
                 }
                 Console.WriteLine("");
             }
         }
 
-        
+
 
     }
 }
